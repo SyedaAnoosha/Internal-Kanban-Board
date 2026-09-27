@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── 1. shadcn/ui Core Variables (Mapped to your palette) ── */
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --primary: #2563EB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #0F172A;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #EFF6FF;
+  --accent-foreground: #1E40AF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #c8d6e7;
+  --input: #E2E8F0;
+  --ring: #2563EB;
+  --radius: 0.5rem; /* 8px base radius */
+}
+
+/* ── 2. Your Custom ERM Variables ── */
+:root {
+  --bg-base: #F8FAFC;
+  --bg-subtle: #F1F5F9;
+  --surface: #FFFFFF;
+  --surface-2: #F8FAFC;
+
+  --border-strong: #CBD5E1;
+
+  --primary-hover: #1D4ED8;
+  --primary-muted: #EFF6FF;
+  --primary-text: #1E40AF;
+
+  --text-1: #0F172A;
+  --text-2: #334155;
+  --text-3: #64748B;
+  --text-4: #94A3B8;
+
+  /* Status Colors */
+  --c-pipeline: #3B82F6;
+  --c-pipeline-bg: #EFF6FF;
+  --c-pipeline-text: #1D4ED8;
+  
+  --c-progress: #F59E0B;
+  --c-progress-bg: #FFFBEB;
+  --c-progress-text: #92400E;
+  
+  --c-review: #8B5CF6;
+  --c-review-bg: #F5F3FF;
+  --c-review-text: #5B21B6;
+  
+  --c-done: #10B981;
+  --c-done-bg: #ECFDF5;
+  --c-done-text: #065F46;
+
+  --error-bg: #FEF2F2;
+  --error-text: #991B1B;
+
+  /* Dark Sidebar */
+  --sidebar-bg: #0F172A;
+  --sidebar-surface: rgba(255, 255, 255, 0.05);
+  --sidebar-border: rgba(255, 255, 255, 0.07);
+  --sidebar-text: #94A3B8;
+  --sidebar-text-hover: #E2E8F0;
+  --sidebar-text-muted: #475569;
+  --sidebar-active-bg: rgba(37, 99, 235, 0.2);
+  --sidebar-active-text: #93C5FD;
+}
+
+/* ── 3. Tailwind v4 Theme Mapping ── */
+@theme inline {
+  /* shadcn mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Custom ERM mappings (Now available as Tailwind classes!) */
+  --color-bg-base: var(--bg-base);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border-strong: var(--border-strong);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-text: var(--primary-text);
+  
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-text-4: var(--text-4);
+
+  --color-c-pipeline: var(--c-pipeline);
+  --color-c-pipeline-bg: var(--c-pipeline-bg);
+  --color-c-pipeline-text: var(--c-pipeline-text);
+  --color-c-progress: var(--c-progress);
+  --color-c-progress-bg: var(--c-progress-bg);
+  --color-c-progress-text: var(--c-progress-text);
+  --color-c-review: var(--c-review);
+  --color-c-review-bg: var(--c-review-bg);
+  --color-c-review-text: var(--c-review-text);
+  --color-c-done: var(--c-done);
+  --color-c-done-bg: var(--c-done-bg);
+  --color-c-done-text: var(--c-done-text);
+
+  --color-error-bg: var(--error-bg);
+  --color-error-text: var(--error-text);
+
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar-surface: var(--sidebar-surface);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-text: var(--sidebar-text);
+  --color-sidebar-text-hover: var(--sidebar-text-hover);
+  --color-sidebar-text-muted: var(--sidebar-text-muted);
+  --color-sidebar-active-bg: var(--sidebar-active-bg);
+  --color-sidebar-active-text: var(--sidebar-active-text);
+
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ── 4. Base Styles ── */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-bg-base text-text-1 font-sans antialiased;
+  }
+}
